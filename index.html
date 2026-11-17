@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>La Mer — Try the Look | Runway</title>
+    <meta
+      name="description"
+      content="Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece."
+    />
+    <meta property="og:title" content="La Mer — Try the Look | Runway" />
+    <meta
+      property="og:description"
+      content="Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp"
+      fetchpriority="high"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        if (localStorage.getItem('runway-theme-mode') === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.dataset.theme = 'dark';
+          document.documentElement.style.colorScheme = 'dark';
+        }
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <header class="site-header shopify-section-group-header-group">
+      <a href="./" class="brand" aria-label="La Mer Runway home">
+        <span class="brand-signature">
+          <span class="brand-signature-text">La Mer</span>
+          <svg
+            class="brand-signature-flourish"
+            viewBox="0 0 112 18"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 12.5C28 6.5 64 4.2 106 6.8C81 9.6 54 12.2 31 14.5"
+              stroke-width="2.1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="./">Home</a>
+        <a href="#lookbook" data-nav-lookbook>Atelier</a>
+        <a href="#showcase" data-nav-closet>Showcase</a>
+        <a href="./" aria-current="page">Runway</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          id="open-closet"
+          type="button"
+          class="header-action-btn"
+          aria-label="Open virtual closet showcase"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 6a2 2 0 1 0-2-2c0 1.5 2 2 2 3.5L3 14.5a1.5 1.5 0 0 0 .9 2.7h16.2a1.5 1.5 0 0 0 .9-2.7L12 7.5z" />
+          </svg>
+          <span class="hide-mobile-label">Closet</span>
+          <span class="header-action-count" data-closet-count>0</span>
+        </button>
+
+        <button
+          id="open-upload"
+          type="button"
+          class="header-action-btn"
+          aria-label="Upload outfit picture"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 16V4M7 9l5-5 5 5M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2" />
+          </svg>
+          <span class="hide-mobile-label">Upload</span>
+        </button>
+
+        <button
+          id="theme-toggle"
+          type="button"
+          class="header-action-btn"
+          aria-pressed="false"
+          aria-label="Switch to dark theme"
+        >
+          <svg
+            class="theme-icon-moon"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg
+            class="theme-icon-sun"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <span data-theme-label class="hide-mobile-label">Dark</span>
+        </button>
+
+        <button id="open-bag" type="button" aria-label="Open styling bag">
+          <svg
+            width="22"
+            height="24"
+            viewBox="0 0 24 26"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.3"
+            aria-hidden="true"
+          >
+            <path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2" />
+          </svg>
+          <span data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <runway-section
+        id="Runway-template--28035983671601__the_runway_wdM8BG"
+        class="rw rw--add-icon rw--popup rw--list has-dividers has-border"
+        data-feel="balanced"
+        data-blur="true"
+        data-mblur="true"
+        data-style="ring"
+        data-mstyle="classic"
+        data-fit="true"
+        data-height-mode="original"
+        data-height-vh="100"
+        data-mheight-mode="custom"
+        data-mheight-vh="109"
+        data-reflect="false"
+        data-autoplay="true"
+        data-speed="5000"
+        data-after-add="stay"
+        data-bundle-code=""
+        data-msg-choose="Pick a size for: [items]"
+        data-msg-error="Couldn’t add to bag. Please try again."
+        data-msg-soldout="Sold out"
+      ></runway-section>
+    </main>
+
+    <dialog id="bag-dialog" aria-labelledby="bag-dialog-title">
+      <div class="bag-heading">
+        <h2 id="bag-dialog-title">Your styling bag</h2>
+        <button id="close-bag" type="button" aria-label="Close styling bag">×</button>
+      </div>
+      <p class="bag-note">
+        A local La Mer outfit shortlist. No payment or order is collected here; reference prices are
+        listed in Kenyan Shillings (KSh).
+      </p>
+      <div id="bag-items"></div>
+      <p id="bag-total"></p>
+      <button id="export-bag" type="button">Download outfit shortlist</button>
+    </dialog>
+
+    <dialog id="closet-dialog" aria-labelledby="closet-dialog-title">
+      <div class="bag-heading">
+        <h2 id="closet-dialog-title">Virtual Closet Showcase</h2>
+        <button id="close-closet" type="button" aria-label="Close virtual closet">×</button>
+      </div>
+      <p class="bag-note">
+        Upload your own outfit pictures to wear them directly on the 3D runway, or browse every look
+        in your showcase.
+      </p>
+
+      <section class="closet-uploader" aria-label="Upload outfit picture">
+        <label id="closet-dropzone" class="closet-dropzone">
+          <input id="closet-file-input" type="file" accept="image/*" aria-label="Choose outfit image" />
+          <img
+            id="closet-preview-img"
+            class="closet-preview-img"
+            alt="Selected outfit preview"
+            hidden
+          />
+          <span id="closet-preview-empty" class="closet-preview-empty">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              aria-hidden="true"
+            >
+              <path d="M12 16V4M7 9l5-5 5 5M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2" />
+            </svg>
+            <span>Drop outfit photo or click to browse</span>
+          </span>
+        </label>
+
+        <div class="closet-fields">
+          <div class="closet-fields-row">
+            <div class="closet-field">
+              <label for="closet-name-input">Look name</label>
+              <input
+                id="closet-name-input"
+                type="text"
+                placeholder="e.g. Downtown Cargo Fit"
+                maxlength="48"
+              />
+            </div>
+            <div class="closet-field">
+              <label for="closet-category-input">Category</label>
+              <select id="closet-category-input" aria-label="Outfit category">
+                <option value="Streetwear">Streetwear</option>
+                <option value="Athletic">Athletic</option>
+                <option value="Studio">Studio</option>
+                <option value="Outerwear">Outerwear</option>
+                <option value="Evening">Evening</option>
+              </select>
+            </div>
+          </div>
+          <div class="closet-field">
+            <label for="closet-pieces-input">Pieces (comma-separated, optional)</label>
+            <input
+              id="closet-pieces-input"
+              type="text"
+              placeholder="e.g. Boxy Hoodie, Wide Denim, Low Sneakers"
+              maxlength="120"
+            />
+          </div>
+          <div class="closet-field">
+            <label for="closet-note-input">Styling note (optional)</label>
+            <input
+              id="closet-note-input"
+              type="text"
+              placeholder="e.g. Layered monochrome streetwear"
+              maxlength="120"
+            />
+          </div>
+          <p id="closet-form-error" class="closet-form-error" role="alert" hidden></p>
+          <div class="closet-form-actions">
+            <button id="closet-wear-btn" type="button" class="closet-btn-primary">
+              Upload &amp; wear on runway
+            </button>
+            <button id="closet-save-btn" type="button" class="closet-btn-secondary">
+              Save to closet
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="closet-showcase-head">
+        <div id="closet-tabs" class="closet-tabs" role="group" aria-label="Filter closet showcase">
+          <button
+            type="button"
+            class="closet-tab is-active"
+            data-closet-tab="all"
+            aria-pressed="true"
+          >
+            All Showcase
+          </button>
+          <button type="button" class="closet-tab" data-closet-tab="uploads" aria-pressed="false">
+            My Uploads
+          </button>
+          <button type="button" class="closet-tab" data-closet-tab="archive" aria-pressed="false">
+            Runway Archive
+          </button>
+        </div>
+        <span class="rw__label" data-closet-total>6 looks</span>
+      </div>
+
+      <div
+        id="closet-category-filters"
+        class="closet-cat-filters"
+        role="group"
+        aria-label="Filter by outfit category"
+      >
+        <button
+          type="button"
+          class="closet-cat-btn is-active"
+          data-closet-cat="all"
+          aria-pressed="true"
+        >
+          All Categories
+        </button>
+        <button type="button" class="closet-cat-btn" data-closet-cat="Streetwear" aria-pressed="false">
+          Streetwear
+        </button>
+        <button type="button" class="closet-cat-btn" data-closet-cat="Athletic" aria-pressed="false">
+          Athletic
+        </button>
+        <button type="button" class="closet-cat-btn" data-closet-cat="Studio" aria-pressed="false">
+          Studio
+        </button>
+        <button type="button" class="closet-cat-btn" data-closet-cat="Outerwear" aria-pressed="false">
+          Outerwear
+        </button>
+        <button type="button" class="closet-cat-btn" data-closet-cat="Evening" aria-pressed="false">
+          Evening
+        </button>
+      </div>
+
+      <div id="closet-grid" class="closet-grid"></div>
+    </dialog>
+
+    <div id="bag-status" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
